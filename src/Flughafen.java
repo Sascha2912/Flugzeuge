@@ -25,6 +25,11 @@ public class Flughafen {
 
     }
 
+    // Getter für flughaefen
+    public static HashMap<Integer, Flughafen> getFlughaefen() {
+        return flughaefen;
+    }
+
     // Getter für flughafenId
     public int getFlughafenId(){
         return this.flughafenId;

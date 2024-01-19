@@ -4,7 +4,7 @@ public class Fluglizenz {
 
     public static HashMap<Integer, Fluglizenz> fluglizenzen = new HashMap<>();
 
-    private int id;
+    private final int id;
     private Pilot pilot;
     private Flugzeugtyp flugzeugtyp;
 
@@ -14,6 +14,11 @@ public class Fluglizenz {
         this.flugzeugtyp = flugzeugtyp;
 
         fluglizenzen.put(id, this);
+    }
+
+    // Getter für flugzeuglizenzen
+    public static HashMap<Integer, Fluglizenz> getFluglizenzen() {
+        return fluglizenzen;
     }
 
     // Getter für id

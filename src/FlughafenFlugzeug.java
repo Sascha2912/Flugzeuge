@@ -18,6 +18,11 @@ public class FlughafenFlugzeug {
 
     }
 
+    // Getter für ffListe
+    public static HashMap<Integer, FlughafenFlugzeug> getFfListe() {
+        return ffListe;
+    }
+
     // Getter für id
     public int getId(){
         return this.id;

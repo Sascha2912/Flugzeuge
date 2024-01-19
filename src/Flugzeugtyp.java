@@ -18,6 +18,11 @@ public class Flugzeugtyp {
         flugzeugtypen.put(id, this);
     }
 
+    // Getter für flugzeugtypen
+    public static HashMap<Integer, Flugzeugtyp> getFlugzeugtypen() {
+        return flugzeugtypen;
+    }
+
     // Getter für id
     public int getId() {
         return id;
