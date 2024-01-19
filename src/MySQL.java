@@ -11,7 +11,7 @@ public class MySQL {
     }
 
     public static Connection getConnection() throws SQLException{
-        return DriverManager.getConnection(connectionString,"","");
+        return DriverManager.getConnection(connectionString,"root","");
     }
 
 }
