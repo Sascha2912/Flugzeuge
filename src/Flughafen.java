@@ -4,7 +4,7 @@ public class Flughafen {
 
     public static HashMap<Integer, Flughafen> flughaefen = new HashMap<>();
 
-    private final int flughafenId;
+    private final int id;
     private String bezeichnung;
     private String straße;
     private String hausnummer;
@@ -12,16 +12,16 @@ public class Flughafen {
     private String ort;
 
 
-    public Flughafen(int flughafenId, String bezeichnung, String straße, String hausnummer, int plz, String ort){
+    public Flughafen(int id, String bezeichnung, String straße, String hausnummer, int plz, String ort){
 
-        this.flughafenId = flughafenId;
+        this.id = id;
         this.bezeichnung = bezeichnung;
         this.straße = straße;
         this.hausnummer = hausnummer;
         this.plz = plz;
         this.ort = ort;
 
-        flughaefen.put(flughafenId, this);
+        flughaefen.put(id, this);
 
     }
 
@@ -32,7 +32,7 @@ public class Flughafen {
 
     // Getter für flughafenId
     public int getFlughafenId(){
-        return this.flughafenId;
+        return this.id;
     }
 
     // Getter und Setter für bezeichnung
