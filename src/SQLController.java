@@ -90,4 +90,52 @@ public class SQLController {
         return -1;
     }
 
+    public  static int insertFlughafen_Flugzeug(int flughafenId, int flugzeugId){
+
+        try(
+                Connection connection = MySQL.getConnection();
+                CallableStatement statement = connection.prepareCall(
+                        "CALL insertFlughafen_Flugzeug(?, ?, ?)"
+                )
+        ){
+            statement.setInt(1,flughafenId);
+            statement.setInt(2, flugzeugId);
+
+            statement.registerOutParameter(3, JDBCType.INTEGER);
+
+            if(statement.executeUpdate() > 0){
+                return statement.getInt(3);
+            }
+
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return -1;
+    }
+
+    public  static int insertFluglizenz(int pilotId, int flugzeugId){
+
+        try(
+                Connection connection = MySQL.getConnection();
+                CallableStatement statement = connection.prepareCall(
+                        "CALL insertPilot(?, ?, ?)"
+                )
+        ){
+            statement.setInt(1,pilotId);
+            statement.setInt(2, flugzeugId);
+
+            statement.registerOutParameter(3, JDBCType.INTEGER);
+
+            if(statement.executeUpdate() > 0){
+                return statement.getInt(3);
+            }
+
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return -1;
+    }
+
 }
