@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         SQLController.initDatabase();
-
+        FlughafenController.createFlughafen("München Mitte", "Flugstraße", "44-67", 12345, "München");
 
         for(Flughafen fh : Flughafen.flughaefen.values()){
             System.out.println("Flughäfen: " + fh.getBezeichnung() + " => " + fh.getFlughafenId());

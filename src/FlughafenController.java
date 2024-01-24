@@ -34,4 +34,16 @@ public class FlughafenController {
         }
     }
 
+    public static Flughafen createFlughafen(String bezeichnung, String straße, String hausnummer, int plz, String ort){
+        Flughafen newFlughafen = null;
+        int flughafenId = SQLController.insertDataToDatabase(bezeichnung, straße, hausnummer, plz, ort);
+
+        if(flughafenId > 0){
+            newFlughafen = new Flughafen(flughafenId, bezeichnung, straße, hausnummer, plz, ort);
+            selectFlughaefen();
+
+        }
+        return newFlughafen;
+    }
+
 }
