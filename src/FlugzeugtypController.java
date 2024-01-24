@@ -37,4 +37,15 @@ public class FlugzeugtypController {
         }
     }
 
+    public static Flugzeugtyp createFlugzeug(String bezeichnung, int anzahlSitzplaetze, int reichweiteInKm){
+        Flugzeugtyp newFlugzeug = null;
+        int flugzeugId = SQLController.insertDataToDatabase(bezeichnung, anzahlSitzplaetze, reichweiteInKm);
+
+        if(flugzeugId > 0){
+            newFlugzeug = new Flugzeugtyp(flugzeugId, bezeichnung, anzahlSitzplaetze, reichweiteInKm);
+            selectFlugzeugtypen();
+        }
+        return newFlugzeug;
+    }
+
 }

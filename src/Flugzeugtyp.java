@@ -51,4 +51,6 @@ public class Flugzeugtyp {
     public void setReichweiteInKm(int reichweiteInKm) {
         this.reichweiteInKm = reichweiteInKm;
     }
+
+
 }
