@@ -44,4 +44,16 @@ public class FlughafenFlugzeugController {
         }
     }
 
+    public static FlughafenFlugzeug createRoute(Flughafen flughafen, Flugzeugtyp flugzeug){
+        FlughafenFlugzeug newRoute = null;
+        int routeId = SQLController.insertFlughafen_Flugzeug(flughafen.getFlughafenId(), flugzeug.getId());
+
+        if(routeId > 0){
+            newRoute = new FlughafenFlugzeug(routeId, flughafen, flugzeug);
+            selectFlughafenFlugzeug();
+        }
+
+        return newRoute;
+    }
+
 }

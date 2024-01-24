@@ -39,6 +39,16 @@ public class FluglizenzController {
         }
     }
 
+    public static Fluglizenz createFluglizenz(Pilot pilot, Flugzeugtyp flugzeug){
+        Fluglizenz newFluglizenz = null;
+        int lizenzId = SQLController.insertFluglizenz(pilot.getId(), flugzeug.getId());
 
+        if(lizenzId > 0){
+            newFluglizenz = new Fluglizenz(lizenzId, pilot, flugzeug);
+            selectFluglizenzen();
+        }
+
+        return newFluglizenz;
+    }
 
 }

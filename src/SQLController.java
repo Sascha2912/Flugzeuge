@@ -119,7 +119,7 @@ public class SQLController {
         try(
                 Connection connection = MySQL.getConnection();
                 CallableStatement statement = connection.prepareCall(
-                        "CALL insertPilot(?, ?, ?)"
+                        "CALL insertFluglizenz(?, ?, ?)"
                 )
         ){
             statement.setInt(1,pilotId);
