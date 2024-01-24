@@ -22,8 +22,13 @@ public class FlughafenFlugzeugController {
                 Flughafen flughafen = Flughafen.flughaefen.get(flughafenId);
                 Flugzeugtyp flugzeugtyp = Flugzeugtyp.flugzeugtypen.get(flugzeugtypId);
 
+                if(flughafen != null && flugzeugtyp != null){
+                    new FlughafenFlugzeug(id, flughafen, flugzeugtyp);
+                }else{
+                    System.err.println("Fehler: Flughafen oder Flugzeugtyp nicht gefunden");
+                }
 
-                new FlughafenFlugzeug(id, flughafen, flugzeugtyp);
+
 
             }
         }catch(SQLException ex){

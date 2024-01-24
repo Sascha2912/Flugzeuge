@@ -30,7 +30,7 @@ public class Flugzeugtyp {
 
     // Getter und Setter für bezeichnung
     public String getBezeichnung() {
-        return bezeichnung;
+        return this.bezeichnung;
     }
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;

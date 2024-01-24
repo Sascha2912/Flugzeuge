@@ -30,7 +30,7 @@ public class Fluglizenz {
     public Pilot getPilot() {
         return this.pilot;
     }
-    public void setPilot(){
+    public void setPilot(Pilot pilot){
         this.pilot = pilot;
     }
 
