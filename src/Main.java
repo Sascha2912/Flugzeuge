@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         SQLController.initDatabase();
-        FlugzeugtypController.createFlugzeug("Der Jet", 3, 10000);
+        PilotController.createPilot("Karl", "Krachbum");
 
         for(Flughafen fh : Flughafen.flughaefen.values()){
             System.out.println("Flughäfen: " + fh.getBezeichnung() + " => " + fh.getFlughafenId());

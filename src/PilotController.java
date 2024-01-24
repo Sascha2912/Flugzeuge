@@ -36,4 +36,16 @@ public class PilotController {
         }
     }
 
+    public static Pilot createPilot(String vorname, String nachname){
+        Pilot newPilot = null;
+        int pilotId = SQLController.insertDataToDatabase(vorname, nachname);
+
+        if(pilotId > 0){
+            newPilot  = new Pilot(pilotId, vorname, nachname);
+            selectPiloten();
+        }
+
+        return newPilot;
+    }
+
 }
